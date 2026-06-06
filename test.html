@@ -9,32 +9,23 @@
     <body>
         <header><h1>Movie Manager</h1></header>
 
-        <section>
-            <!-- display movies -->
-            <table>
-                <tr>
-                    <th>Title</th>
-                    <th>Genre</th>
-                    <th>Rating</th>
-                    <th>Rating</th>
-                </tr>
+        <main>
+            <h1>Add Movie</h1>
+            <form action="add_movie.php" method="post">
+                <label>Title:</label>
+                <input type="text" name="title"><br>
 
-                <?php foreach ($movies as $movie) : ?>
-                <tr>
-                    <td><?php echo $movie['title']; ?></td>
-                    <td><?php echo $movie['genre']; ?></td>
-                    <td><?php echo $movie['rating']; ?></td>
-                    <td><?php echo $movie['year']; ?></td>
-                    <td><form action="delete_movie.php" method="post">
-                        <input type="hidden" name="movie_id"
-                            value="<?php echo $movies['movieID']; ?>">
-                        <input type="submit" value="Delete">
-                    </form></td>
-                </tr>
-                <?php endforeach; ?>
-            </table>
-            <p><a href="add_movie_form.php">Add Movie</a></p>
-        </section>
+                <label>Genre:</label>
+                <input type="text" name="genre"><br>
+
+                <label>Rating:</label>
+                <input type="text" name="rating"><br>
+
+                <label>Year:</label>
+                <input type="text" name="year"><br>
+            </form>
+            <p><a href="index.php">View Movie List</a></p>
+        </main>
 
         <footer>
             <p>&copy; Movie Manager</p>
