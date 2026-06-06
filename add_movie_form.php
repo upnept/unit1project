@@ -23,6 +23,7 @@
 
                 <label>Year:</label>
                 <input type="text" name="year"><br>
+                <input type="submit" value="Add Movie"><br>
             </form>
             <p><a href="index.php">View Movie List</a></p>
         </main>
