@@ -12,11 +12,13 @@ if ($title == null || $genre == null || $rating == null || $rating == false || $
 } else {
     require_once('database.php');
 
-    // Add the movie to the database  
-    $query = 'INSERT INTO movies
-                 (title, genre, rating, year)
-              VALUES
-                 (:title, :genre, :rating, :year)';
+    // edit the movie to the database  
+    $query = 'UPDATE movies
+              SET title = :title
+              genre = :genre
+              rating = :rating
+              year = :year
+              WHERE movieId = :movie_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':title', $title);
     $statement->bindValue(':genre', $genre);

@@ -10,8 +10,8 @@
         <header><h1>Movie Manager</h1></header>
 
         <main>
-            <h1>Add Movie</h1>
-            <form action="add_movie.php" method="post">
+            <h1>Edit Movie</h1>
+            <form action="edit_movie.php" method="post">
                 <label>Title:</label>
                 <input type="text" name="title"><br>
 
@@ -23,7 +23,7 @@
 
                 <label>Year:</label>
                 <input type="text" name="year"><br>
-                <input type="submit" value="Add Movie"><br>
+                <input type="submit" value="Save"><br>
             </form>
             <p><a href="index.php">View Movie List</a></p>
         </main>
