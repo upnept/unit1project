@@ -5,7 +5,7 @@ require_once('database.php');
 $queryCategory = 'SELECT * FROM movies';
 $statement = $db->prepare($queryCategory);
 $statement->execute();
-$movies = $statement->fetch();
+$movies = $statement->fetchAll();
 $statement->closeCursor();
 
 ?>
@@ -30,7 +30,7 @@ $statement->closeCursor();
                     <th>Title</th>
                     <th>Genre</th>
                     <th>Rating</th>
-                    <th>Rating</th>
+                    <th>Year</th>
                 </tr>
 
                 <?php foreach ($movies as $movie) : ?>
@@ -41,7 +41,7 @@ $statement->closeCursor();
                     <td><?php echo $movie['year']; ?></td>
                     <td><form action="delete_movie.php" method="post">
                         <input type="hidden" name="movie_id"
-                            value="<?php echo $movies['movieID']; ?>">
+                            value="<?php echo $movie['movieID']; ?>">
                         <input type="submit" value="Delete">
                     </form></td>
                 </tr>
