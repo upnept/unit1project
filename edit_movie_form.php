@@ -1,3 +1,18 @@
+<?php
+// Get the movie data
+$movie_id = filter_input(INPUT_GET, 'movie_id', FILTER_VALIDATE_INT);
+
+require_once('database.php');
+
+$query = 'SELECT * FROM movies
+          WHERE movieId = :movie_id';
+$statement = $db->prepare($query);
+$statement->bindValue(':movie_id', $movie_id);
+$statement->execute();
+$movie = $statement->fetch();
+$statement->closeCursor();
+?>
+
 <!DOCTYPE html>
 
 <html>
