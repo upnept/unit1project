@@ -11,18 +11,22 @@
 
         <main>
             <h1>Edit Movie</h1>
+            
             <form action="edit_movie.php" method="post">
                 <label>Title:</label>
-                <input type="text" name="title"><br>
+                <input type="text" name="title" value="<?php echo $movie['title']; ?>"><br>
 
                 <label>Genre:</label>
-                <input type="text" name="genre"><br>
+                <input type="text" name="genre" value="<?php echo $movie['genre']; ?>"><br>
 
                 <label>Rating:</label>
-                <input type="text" name="rating"><br>
+                <input type="text" name="rating" value="<?php echo $movie['rating']; ?>"><br>
 
                 <label>Year:</label>
-                <input type="text" name="year"><br>
+                <input type="text" name="year" value="<?php echo $movie['year']; ?>"><br>
+
+                <input type="hidden" name="movie_id" value="<?php echo $movie['movieID']; ?>"><br>
+
                 <input type="submit" value="Save"><br>
             </form>
             <p><a href="index.php">View Movie List</a></p>
