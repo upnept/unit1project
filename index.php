@@ -39,6 +39,7 @@ $statement->closeCursor();
                     <td><?php echo $movie['genre']; ?></td>
                     <td><?php echo $movie['rating']; ?></td>
                     <td><?php echo $movie['year']; ?></td>
+                    <td><a href="edit_movie_form.php?movie_id=<?php echo $movie['movieID']; ?>">Edit</a></td>
                     <td><form action="delete_movie.php" method="post">
                         <input type="hidden" name="movie_id"
                             value="<?php echo $movie['movieID']; ?>">
